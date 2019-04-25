@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Murray's Online Store Catalogue </title>
+<link href ="MyStore.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  div.ab {
+  /*background-image: url(images/rentals/dslr.jpg);*/
+    width: 210px;
+    height:45px;
+    background-color:red;
+    position:fixed;    
+    font-weight: bold;
+    font-size: 22px;
+    padding:5px;
+    text-align: center;
+    opacity: 0;
+}​
+</style>
+
+
+</head>
+<script type="text/javascript">
+  
+  var total = localStorage.getItem(localStorage.key(0));
+  
+function addtoCart(equipment,price)
+{
+        var fullCart = "images/cartfull.png";
+        var getSource = document.getElementById("onclickchange");
+        getSource.src = fullCart;
+       
+          sessionStorage.setItem(equipment,price);
+          let value = sessionStorage.getItem(equipment);
+          total = +total + +value; 
+          alert("Your current total is: R" + total);
+          localStorage.setItem("Total",total);      
+    };
+
+$(document).ready(function(){
+  $('.ab').css("opacity","1");
+    animateDiv();
+    
+});
+
+function makeNewPosition(){
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];    
+    
+}
+
+function animateDiv(){
+    var newq = makeNewPosition();
+    var oldq = $('.ab').offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+    
+    $('.ab').animate({ top: newq[0], left: newq[1] }, speed, function(){
+      animateDiv();        
+    });
+    
+};
+
+function calcSpeed(prev, next) {
+    
+    var x = (prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+    
+    var greatest = x > y ? x : y;
+    
+    var speedModifier = 0.1;
+
+    var speed = Math.ceil(greatest/speedModifier);
+
+    return speed;
+
+}
+    
+
+</script>
+
+</head>
+<header>
+  
+			<nav id="mainNav" class = "mynavbar1">
+        <table>
+          <tr>
+            <td><a href="MyStore-home-english.html">
+                <img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style="float:left"></a>
+            </td>
+                     	<td><a class="apache">APACHE<BR>RENTALS</a>
+                     	</td>
+						<td class ="tabletop"><a href="MyStore-home-english.html">HOME |</a><br>
+						  <a href="MyStore-home-english.html"></a>	
+						</td>
+            <td class ="tabletop"><a href="MyStore-catalogue.html">CATALOGUE |</a><br>
+              <a href="MyStore-home-english.html"></a>	
+            </td>
+            <td class ="tabletop"><a href="MyStore-QUOTE.html">QUOTE |</a><br>
+              <a href="MyStore-home-english.html"></a>	
+            </td>
+            <td class ="tabletop"><a href="MyStore-team.html">THE TEAM |</a><br>
+            	<a href="MyStore-home-english.html"></a>	
+            </td>
+            <td class ="tabletop"><a href="MyStore-about.html">ABOUT US</a><br>
+            	<a href="MyStore-home-english.html">
+            	<img src="images/saflag.png" alt= "SA Flag" style="float:right; padding-left:5px" class="flagsizer" ></a>
+            	<a href="MyStore-home-chinese.html">
+            	<img src="images/chinese.png" alt= "SA Flag" style="float:right" class="flagsizer"></a>
+            </td>
+            <td ><form role="search">
+    							<div class="search-control">
+        					<input type="search" id="site-search" name="q" placeholder="Search the site..." style="margin-left:20px">
+        				  <button >Search</button>
+            <td class ="tabletop">
+              <a href="MyStore-checkout.html">
+              <img src="images/cartempty.png" id = "onclickchange" alt= "Shopping Cart"  class="flagsizer" style="margin-left:20px; width:30px; height: 30px "></a>
+            </td>
+    			</div>
+  			</form>
+   		</tr>
+   	</table>
+   </nav>
+ </header>
+ <br>
+
+ <div class='ab'>
+   <p>SALE ON SOUND!</p>
+ </div>
+
+
+ 	<h1>CAMERA RENTAL</h1>
+    <br>
+        <!--dslr new row-->
+        <div class="container" align="middle">
+            <div class="row">
+                <div class="col-4">
+                    <div class ="equipment rounded">
+                      <a href="MyStore-dslr.html">
+                        <img id="dslr" src="images/rentals/dslr.jpg" alt="DSLR" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded">Canon EOS 7D DSLR</a>
+                        <input type ="hidden" id ="storage" name="screening" value=""  style = "float:left"><br>
+                        <h3>R599/week</h3> 
+                        <button onclick ="addtoCart('Canon EOS 7D DSLR','599')" id="Canon EOS 7D DSLR" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>
+        <!--gopro-->
+                <div class="col-4">
+                   <div class ="equipment">
+                    <a href="MyStore-gopro.html">
+                        <img id="gopro" src= "images/rentals/gopro.jpg" alt="Gopro" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded">Gopro</a>
+                        <input type ="hidden" id ="DSLR" name="screening"  style = "float:left"><br>
+                        <h3>R299/week</h3>
+                         <button onclick ="addtoCart('Gopro','299')" id="Gopro" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>  
+        <!--sony-->
+                <div class="col-4">
+                    <div class ="equipment">
+                      <a href="MyStore-sony.html">
+                        <img id="sony" src="images/rentals/sony.jpg" alt="Sony PXW-X70" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded">Sony PXW-X70</a>
+                        <br>
+                        <h3>R699/week</h3> 
+                        <button onclick ="addtoCart('Sony PXW-X70','699')" id="Gopro" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>
+            </div>
+                <br><br><a name="soundrental">
+        <h1>SOUND RENTAL</h1><br>    
+        <!--mixer-->
+            <div class="row">
+                <div class="col-4">
+                    <div class ="equipment">
+                      <a href="MyStore-mixingdesk.html">
+                        <img id="mixer" src="images/rentals/mixingdesk.jpg" alt="Mackie 14-Ch Mixer" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded">Mackie 14-Ch Mixer</a>
+                        <br>
+                        <h3><div style="text-decoration: line-through">R400/week</div><div style="color:red">
+          R360/week</div></h3>
+                        <button onclick ="addtoCart('Mackie 14-Ch Mixer','360')" id="Gopro" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>
+        <!--radiomix-->
+                <div class="col-4">
+                   <div class ="equipment">
+                    <a href="MyStore-radiomic.html">
+                        <img id="radiomic" src= "images/rentals/radiomic.jpg" alt="Sony Radio Mic" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded"> Sony Radio Mic</a>
+                        <br>
+                        <h3><div style="text-decoration: line-through">R300/week</div><div style="color:red">
+          R270/week</div></h3> 
+                        <button onclick ="addtoCart('Sony Radio Mic','270')" id="Gopro" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div> 
+                
+            </div> <br><br>
+        <h1>LIGHT RENTAL</h1><br>
+        <!--LED-->
+            <div class="row">
+                <div class="col-4">
+                    <div class ="equipment">
+                      <a href="MyStore-led.html">
+                        <img id="led" src="images/rentals/LED.jpg" alt="1'x122' LED Lite Panel" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded">1'x1'LED Lite Panel</a>
+                        <br>
+                        <h3>R689/week</h3> 
+                        <button onclick ="addtoCart('LED Lite Panel','689')" id="Gopro" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>
+            <!--mixer new row-->
+            <div class="col-4">
+                    <div class ="equipment">
+                      <a href="MyStore-daylight.html">
+                        <img id="Daylight" src="images/rentals/Daylight.jpg" alt="Daylight Lighting/HMI" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded">Daylight Lighting/HMI</a>
+                        <br>
+                        <h3>R589/week</h3> 
+                        <button onclick ="addtoCart('Daylight Lighting/HMI','589')" id="Gopro" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>
+            </div>
+        <br><br>
+
+        <h1>MONITOR RENTAL</h1><br>
+        <!--gopro-->
+            <div class="row">
+                <div class="col-4">
+                   <div class ="equipment">
+                    <a href="MyStore-clientmonitor.html">
+                        <img id="clientmonitor" src= "images/rentals/clientmonitor.jpg" alt="Bon 12 Bit HD" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded"> Bond 12 Bit HD</a>
+                        <br>
+                        <h3>R289/week</h3>
+                        <button onclick ="addtoCart('Bon 12 Bit HD','289')" id="Gopro" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>  
+        <!--sony-->
+                <div class="col-4">
+                    <div class ="equipment">
+                      <a href="MyStore-teradek.html">
+                        <img id="Teradek" src="images/rentals/teradek.jpg" alt="Teradek Bolt 500" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded">Teradek Bolt 500</a>
+                        <br>
+                        <h3>R679/week</h3> 
+                        <button onclick ="addtoCart('Teradek Bolt 500','679')" id="Gopro" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>
+            </div>
+       <br><br>
+        <h1>GENERATOR RENTAL</h1><br>
+        <!--GENERATOR-->
+            <div class="row">
+                <div class="col-4">
+                   <div class ="equipment ">
+                    <a href="MyStore-generator.html">
+                        <img id="GENERATOR" src= "images/rentals/GENERATOR.jpg" alt="Honda 6.5kVA Generator" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded"> Honda 6.5kVA Generator</a>
+                        <br>
+                        <h3>R409/week</h3>
+                        <button onclick ="addtoCart('Honda 6.5kVA Generator','409')" id="Honda 6.5kVA Generator" value="" class = "cartbutton">Quick add to cart</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+    <BR>
+    <BR>
+       <h1>DISCOUNTS</h1>
+       <p style="font-weight:bold" align="middle">*We offer great discounts for longer term rentals.</p><br>
+
+       <table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Week</th>
+      <th scope="col">Month</th>
+      <th scope="col">3 Months</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Camera</th>
+      <td>5%</td>
+      <td>10%</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <th scope="row">Sound</th>
+      <td>10%</td>
+      <td>15%</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <th scope="row">Light</th>
+      <td>10%</td>
+      <td>15%</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <th scope="row">Monitor</th>
+      <td>5%</td>
+      <td>10%</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <th scope="row">Generator</th>
+      <td>5%</td>
+      <td>10%</td>
+      <td>15%</td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+
+
+            
+    
+</body>
+ <footer align="left">
+		<nav id="mainNav" class = "foot">
+			<table style="padding-top:5px">
+				<tr><td><a href="mailto:sales@apache.com" style="line-height: 1.7em">sales@apache.com</a><br><!--I included the email and the anchor because some people prefer to copy and paste the address into there own email provider-->
+						<a href="callto:0834567889"style="line-height: 1.7em">0834567889</a>
+					</td>
+					<td>
+               			<a href="MyStore-home-english.html">
+							<img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style=" margin-left:120px"</a><br>
+							<a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
+					</td>
+					<td>
+               			<a href="">
+							<img src="images/twitter.png" alt= "My Store Logo" class="sociallogo" style=" margin-left:150px"</a>
+					</td>
+					<td>
+               			<a href="">
+							<img src="images/facebook.png" alt= "My Store Logo" class="sociallogo" </a>
+					</td>
+				</tr>
+			</table>
+			
+       	</nav>
+</footer>
+<script type="text/javascript">
+  var fullCart = "images/cartfull.png";
+     var getSource = document.getElementById("onclickchange");
+  if (localStorage.length > 0)
+    {
+            getSource.src = fullCart;
+    }
+</script>
+</html>

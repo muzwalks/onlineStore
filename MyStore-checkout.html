@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+</script>
+<!-- jQuery library -->
+
+<link href ="MyStore.css" rel="stylesheet" type="text/css">
+
+    <title>Murray's Online Store Checkout </title>
+</head>
+<body >
+  <div id = "dissolve">
+<header>
+      <nav id="mainNav" class = "mynavbar1">
+        <table>
+          <tr>
+            <td><a href="MyStore-home-english.html">
+                <img src="images/mystorelogo.png" alt= "My Store Logo" id="MyStoreLogo2" class="navbarlogo" style="float:left"></a>
+            </td>
+                      <td><a class="apache">APACHE<BR>RENTALS</a>
+                      </td>
+            <td class ="tabletop"><a href="MyStore-home-english.html">HOME |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-catalogue.html">CATALOGUE |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-QUOTE.html">QUOTE |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-team.html">THE TEAM |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-about.html">ABOUT US</a><br>
+              <a href="MyStore-home-english.html">
+              <img src="images/saflag.png" alt= "SA Flag" id="saflag" style="float:right; padding-left:5px" class="flagsizer" ></a>
+              <a href="MyStore-home-chinese.html">
+              <img src="images/chinese.png" alt= "SA Flag" id="chflag" style="float:right" class="flagsizer"></a>
+            </td>
+            <td ><form role="search">
+                  <div class="search-control">
+                  <input type="search" id="site-search" name="q" placeholder="Search the site..." style="margin-left:20px">
+                  <button >Search</button></div></form></td>
+            <td class ="tabletop">
+              <a href="MyStore-checkout.html">
+              <img src="images/cartempty.png" id = "onclickchange" alt= "Shopping Cart"  class="flagsizer" style="margin-left:20px; width:30px; height: 30px "></a>
+            </td>
+      </tr>
+    </table>
+   </nav>
+ </header>
+ <br>
+ <br>
+
+<div class='c'><img src="images/rentals/mickey.png" id = "mickeymouse" alt= "Mickey"></div>
+<div class='b'><img src="images/rentals/rabbit.png" id = "bugs" alt= "Bunny"></div>
+ 
+ <br>
+ <div class="container">
+    <div class="row">
+      <div  class="col">    
+        <h1>CART</h1><button id="resetCart" onclick="resetCart()" style="margin-left: 614px" class= "btn btn-light btn-sm">Empty Cart</button> <br>
+           <table id="MyTable" class="table table-bordered">
+            <tr>            
+            </tr>
+           </table>
+      </div>
+  
+<div class="col blacktext" id ="checkout"> 
+       <h1>FINAL CHECKOUT</h1><br>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">SUBTOTAL</h6>
+                <small class="text-muted">Equipment Rental</small>
+              </div>
+              <span class="text-muted"><input type="text" id="subtotal" name="total" style="width:100px; border:none;text-align: right;"></span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">DELIVERY</h6>
+                <small class="text-muted">
+                  <div class="form-check form-check-inline">
+                    <label for "yes" class="form-check-label"><input type="radio" ID ="no" name="optradio" class="form-check-input" checked onchange="Delivery()">No</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <label for "no" class="form-check-label"><input type="radio" ID = "express" name="optradio" class="form-check-input" onchange="Delivery()">Express</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <label for "no" class="form-check-label"><input type="radio" ID = "normal" name="optradio" class="form-check-input" onchange="Delivery()">Normal</label>
+                  </div>
+                </small>
+              </div>
+                <span class="text-muted"><input type="text" id="delivery" name="total" value="0" style="width:60px; border:none;text-align: right;"></span>
+            </li>
+            
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-success">
+                <h6 class="my-0">PROMO CODE</h6>
+                <small><input type="text" id="bond" name="total" style="width:100px; border:none;text-align: right;"></small>
+              </div>
+              <span class="text-success"><input type="text" id="code" name="total" style="width:100px; border:none;text-align: right;"></span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">VAT (13%)</h6>
+              </div>
+              <span class="text-muted"><input type="text" id="vat" name="total" style="width:100px; border:none;text-align: right;"></span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between">
+              <span>TOTAL (USD)</span>
+              <strong><input type="text" id="total" name="total" value="" style="width:60px; border:none;text-align: right;"></strong>
+            </li>
+          </ul>
+            <div class="input-group">
+              <input type="text" class="form-control" id = "promo" placeholder="Promo code">
+              <div class="input-group-append">
+                <button class="cartbutton" id="redeemit" onclick="Redeem()">Redeem</button>
+              </div>
+            </div>
+            <br>
+
+            <div class="btn-group">
+  
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Calculate
+             
+            </button>
+              <div class="dropdown-menu">
+                <button  class="dropdown-item" id="showCalc">Calculator</button>
+                <button  class="dropdown-item" id="showConverter">Currency Converter</button>
+              </div>
+            </div>
+            <button class="cartbutton"  id = "updating" style="width:27%" onclick="Update()">Update</button>
+            <button  class="cartbutton" id="myBtn" style="float-left; width:43%" onclick="confirmOrder()">Confirm Order</button>
+
+         </div>
+    </div>
+</div>
+</BR>
+
+
+
+
+<!-- Example single danger button -->
+
+<!-- Trigger/Open The Modal -->
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      
+      <h2>YOUR ORDER HAS BEEN CONFIRMED</h2>
+      <span class="close"><a href="MyStore-home-english.html">&times;</a></span>
+    </div>
+    <div class="modal-body">
+      <p>Order number: </p>
+      <p id="demo"></p>
+    </div>
+    <div class="modal-footer">
+      <h3>THANKS FOR RENTING AT APACHE!</h3>
+    </div>
+  </div>
+
+</div>
+<br>
+ 
+ 
+<div class="calculator" id="calc" style= "width:27%;margin-left: 70%;display: none">
+
+
+           <h2>CONVENIENCE CALC</h2>     
+           <input type ="text" id ="display" name="screening" class = "calcinput" style="background-color: black; color:white; border:none;text-align: right;height:auto; font-size:28px ;margin-bottom: 0"><br>
+                            
+            <button onclick="numInput('7')" id="7" value="7" class="numberbutton calcbutton whitebutton">7</button>
+            <button onclick="numInput('8')" id="8" value="8" class="numberbutton calcbutton whitebutton">8</button>
+            <button onclick="numInput('9')" id="9" value="9" class="numberbutton calcbutton whitebutton">9</button>
+            <button onclick="setOperation('multiply')" id="x" value="x" class="opbutton calcbutton">x</button><br>
+
+            <button onclick="numInput('4')" id="4" value="4" class="numberbutton calcbutton whitebutton">4</button>
+            <button onclick="numInput('5')" id="5" value="5" class="numberbutton calcbutton whitebutton">5</button>
+            <button onclick="numInput('6')" id="6" value="6" class="numberbutton calcbutton whitebutton">6</button>
+            <button onclick="setOperation('divide')" id="/" value="÷" class="opbutton calcbutton">/</button><br>
+
+            <button onclick="numInput('1')" id="1" value="1" class="numberbutton calcbutton whitebutton">1</button>
+            <button onclick="numInput('2')" id="2" value="2" class="numberbutton calcbutton whitebutton">2</button>
+            <button onclick="numInput('3')" id="3" value="3" class="numberbutton calcbutton whitebutton">3</button>
+            <button onclick="setOperation('minus')" id="-" value="-" class="opbutton calcbutton">-</button><br>
+
+            <button onclick="numInput('0')" id="0" value="0" class="numberbutton calcbutton whitebutton">0</button>
+            <button onclick="clearDisplay()" id="C" value="C" class="clearbutton calcbutton ">C</button>
+            <button onclick="Calc()" id="=" value="=" class="opbutton calcbutton">=</button>
+            <button onclick="setOperation('add')" id="+" value="+" class="opbutton calcbutton">+</button><br>
+        </div>
+        <br>
+
+        <div id = "converter" style="background-color: black; width:16%; color:white; padding:8px; border-radius: 5px;margin-left: 70%; display: none">
+          <h2>CURRENCY CONVERTER</h2>         
+            <label > Amount</label><br>
+            <input type ="text" id ="amountbox" name="box1" style = "border:1px solid black"><br>
+            <select id="currency" name="converter" >
+                <option id="EUR" value="euros">EUR</option>
+                <option id="USD" value ="dollars" >USD</option>
+                <option id="GBP" value = "pounds">GBP</option>
+            </select><br>
+            <label for "result"> Result</label><br>
+            <input type ="text" id ="resultbox" name="result" style = "border:1px solid black">
+              <!--<input type ="submit" id ="Convert" onclick="convertAmount()"> why does this not work? I spent hours thinking it was the JS, but it's this stupid form button ;-) -->
+            <button class="cartbutton"" onclick="convertAmount(), clickCounter()">Convert</button>
+                <button class="cartbutton" onclick="clearBoxes(), clickCounter()" style="margin-left: 10px">Clear</button>
+              </div>
+
+              <div id="container1">
+
+
+        <br>
+        <br>
+        <button class="cartbutton" id = "dissolveButt">Push me</button>
+        <button class="cartbutton" id = "changeBackground">Change Background Color</button>
+        <button class="cartbutton" id = "changeFont">Change Font Color</button>
+        <button class="cartbutton" id = "changeFontsize">Change Font Size</button>
+        <button class="cartbutton" id = "mickey">Mickey</button>
+        <button class="cartbutton" id = "bunny">Bugs</button>
+        
+        <br>
+        <br>
+        
+       
+        
+
+        
+ </body>   
+
+ <footer align="left">
+    <nav id="mainNav" class = "foot awesome">
+      <table style="padding-top:5px">
+        <tr><td><a href="mailto:sales@apache.com" style="line-height: 1.7em">sales@apache.com</a><br><!--I included the email and the anchor because some people prefer to copy and paste the address into there own email provider-->
+            <a href="callto:0834567889"style="line-height: 1.7em">0834567889</a>
+          </td>
+          <td>
+                    <a href="MyStore-home-english.html">
+              <img src="images/mystorelogo.png" alt= "My Store Logo" id="MyStoreLogo4" class="navbarlogo" style=" margin-left:120px"</a><br>
+              <a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
+          </td>
+          <td>
+                    <a href="">
+              <img src="images/twitter.png" alt= "Twitter page" id = "Twitter" class="sociallogo whole2" style=" margin-left:150px"</a>
+          </td>
+          <td>
+                    <a href="">
+              <img src="images/facebook.png" alt= "FB page" id ="Facebook" class="sociallogo whole" </a>
+          </td>
+        </tr>
+      </table>
+      
+        </nav>
+</footer>
+</div>
+
+<script type="text/javascript">
+
+ document.getElementById("subtotal").value = localStorage.getItem(localStorage.key(0));
+        
+        for (let i = 0; i < sessionStorage.length; i++){
+        let key = sessionStorage.key(i);
+        let value = sessionStorage.getItem(key);   
+    
+            var row = MyTable.insertRow(i);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+
+            var img = document.createElement('img');
+            img.src = "images/cartempty.png";
+
+            document.getElementById("MyTable").rows[i].cells[1].innerHTML = key;
+            document.getElementById("MyTable").rows[i].cells[5].innerHTML = value;
+
+            //+ button
+            //get the price of the equipment
+            var value1= document.getElementById("MyTable").rows[i].cells[5].innerHTML;
+            //create the button
+            var btnplus = document.createElement("BUTTON");
+            btnplus.innerHTML = '+';
+            btnplus.setAttribute("class", "btn btn-light btn-bg");
+
+            btnplus.onclick = function() { //increase subtotal
+            //get the total price of the equipment in the table
+            var value2= document.getElementById("MyTable").rows[i].cells[5].innerHTML;
+            var total1 = +value1 + +value2;
+            document.getElementById("MyTable").rows[i].cells[5].innerHTML = total1;
+
+              //increase amount in localStorage
+            var total = localStorage.getItem(localStorage.key(0));
+            total = +total + +value1;
+            alert("Your current total is: R" + total);
+            document.getElementById("subtotal").value = total;
+            localStorage.setItem("Total",total); 
+              
+              //increase quantity of items
+            var val = document.getElementById("MyTable").rows[i].cells[3].innerHTML;
+            document.getElementById("MyTable").rows[i].cells[3].innerHTML=+val + +1;
+            }
+             cell3.appendChild(btnplus);           
+             
+             //there is a default quantity of 1
+             document.getElementById("MyTable").rows[i].cells[3].innerHTML= "1";
+
+            //minus button
+             var btnminus = document.createElement("BUTTON");
+             var t1 = document.createTextNode("-");
+             btnminus.appendChild(t1);
+             btnminus.setAttribute("class", "btn btn-light btn-bg");
+             var value1= document.getElementById("MyTable").rows[i].cells[5].innerHTML;
+
+             btnminus.onclick = function() { //decrease subtotal
+                var value2= document.getElementById("MyTable").rows[i].cells[5].innerHTML;
+                  var total1 = +value2 - +value1;
+                  document.getElementById("MyTable").rows[i].cells[5].innerHTML=total1;
+              
+              //decrease quantity of items
+              var val = document.getElementById("MyTable").rows[i].cells[3].innerHTML;
+              document.getElementById("MyTable").rows[i].cells[3].innerHTML=+val - +1 ;
+              //id zero quantity then delete row  
+                if (document.getElementById("MyTable").rows[i].cells[3].innerHTML == 0)
+                  document.getElementById("MyTable").deleteRow(i);
+
+              //decrease amount in localStorage
+              var total = localStorage.getItem(localStorage.key(0));
+              total = +total - +value1;
+              alert("Your current total is: R" + total);
+              document.getElementById("subtotal").value = total;
+              localStorage.setItem("Total",total); 
+              }
+             cell5.appendChild(btnminus);
+
+             //remove the row
+             
+             var btndelete = document.createElement("BUTTON");
+             var t2 = document.createTextNode("x");
+             btndelete.appendChild(t2);
+             document.body.appendChild(btndelete);
+             btndelete.setAttribute("class", "btn btn-light btn-bg");
+              
+             cell7.appendChild(btndelete);
+             /*
+             btndelete.onclick = function() { 
+            var value1= document.getElementById("MyTable").rows[i].cells[5].innerHTML;
+              var total = localStorage.getItem(localStorage.key(0));
+              total = +total - +value1;
+              alert("Your current total is: R" + total);
+              document.getElementById("subtotal").value = total;
+              localStorage.setItem("Total",total);
+              document.getElementById("MyTable").deleteRow(i)};  */ 
+
+               btndelete.onclick = function() { 
+           var value1= document.getElementById("MyTable").rows[i].cells[5].innerHTML;
+           var total = localStorage.getItem(localStorage.key(0));
+           total = +total - +value1;
+           alert("Your current total is: R" + total);
+           document.getElementById("subtotal").value = total;
+           localStorage.setItem("Total",total);
+
+           // store the table element inside a variable to improve code readability and neaten up the code
+           var table = document.getElementById("MyTable");
+
+         // if there's only one row in the table, delete the row at index 0
+           if (table.rows === 1) {
+                 table.deleteRow(0);
+           }
+            else {
+            // else clause to handle deletion when there are more than one rows in the table
+             // table.deleteRow(i);     Sometimes the value of i doesn't work well so "this" might help to know which row called the delete function
+              table.deleteRow(this);
+        
+              // test output
+               console.log(i + " this is the value of i");
+                console.log(this + " this is the value of this");
+            }
+}
+
+        
+        var pic = document.getElementById("MyTable").rows[i].cells[5].innerHTML;
+        //check which item(price) is in the cart and then add item image to the row
+        //cameras
+        if(pic == "599"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/dslr.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        else if (pic == "299"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/gopro.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        if(pic == "699"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/sony.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        //sound
+        else if (pic == "360"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/mixingdesk.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        if(pic == "270"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/radiomic.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        //light
+        else if (pic == "689"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/LED.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        else if(pic == "589"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/Daylight.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        //monitors
+        else if (pic == "289"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/clientmonitor.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        else if (pic == "679"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/teradek.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+        else if (pic == "409"){
+          var img = document.createElement('img');
+            img.src = "images/rentals/generator.jpg";
+            img.style.height = '80px';
+            img.style.width = '75px';
+            cell1.appendChild(img);
+        }
+    }
+
+        function Update(){
+          var subtotal = document.getElementById("subtotal").value;
+          var delivery = document.getElementById("delivery").value;
+          var total = document.getElementById("total").value;
+          var code = document.getElementById("code").value;
+          total = +subtotal + +delivery + +code;
+          var VAT = document.getElementById("vat").value;
+          VAT = total * 13/100;
+          document.getElementById("vat").value = VAT;
+          total = +total + +VAT;
+          document.getElementById("total").value = total;
+          }
+
+        function Redeem()
+        {
+          var promo = document.getElementById("promo").value;
+          var code = document.getElementById("code").value;
+          if (promo == "BOND-007")
+          {
+            document.getElementById("code").value = '-50';
+            document.getElementById("bond").value = 'BOND-007';
+          }
+          else
+          {
+              alert("Incorrect code!");
+          }
+        }
+       
+          function Delivery()
+          {
+            if(document.getElementById("no").checked)
+              document.getElementById("delivery").value = '0';
+            else if(document.getElementById("express").checked)
+              document.getElementById("delivery").value = '100';
+            else
+               document.getElementById("delivery").value = '50';
+          }
+
+          var fullCart = "images/cartfull.png";
+          var getSource = document.getElementById("onclickchange");
+          if (localStorage.length > 0)
+          {
+            getSource.src = fullCart;
+          }
+
+          function resetCart(){
+            localStorage.clear();
+            sessionStorage.clear();
+            var fullCart = "images/cartempty.png";
+            var getSource = document.getElementById("onclickchange");
+            getSource.src = fullCart;
+            document.getElementById("subtotal").value ="0";
+            var tableRef = document.getElementById('MyTable');
+              while (tableRef.rows.length > 0 )
+              {
+              tableRef.deleteRow(0);
+              }
+            document.getElementById("Total")="";  
+          }  
+
+          // Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    if (document.getElementById("subtotal").value == 0)
+      alert("Nothing to confirm");
+    else
+    {
+    modal.style.display = "block";
+    var x = document.getElementById("demo")
+    x.innerHTML ="XRT" +  Math.floor((Math.random() * 100000) + 1);
+  }
+
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+    resetCart();
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+
+}
+
+//CALCULATOR
+function numInput(digit){
+    var display = document.getElementById('display');
+    clearPreviousResult();
+      if (display.value === '0') {
+        display.value = '';
+      }
+      display.value += digit;
+  }
+  
+    function clearPreviousResult() {
+    var display = document.getElementById('display');
+    if (calculationFinished) {
+        display.value = '0';
+        calculationFinished = false;
+    }
+}
+
+  function clearDisplay(){
+    var display = document.getElementById('display');
+    display.value = '0';
+    storedNum = '0';
+      calculationFinished = true; 
+      operation = operations.none;
+}
+
+  function setOperation(command){
+    var display = document.getElementById('display');
+    Calc();
+    storedNum = display.value;
+        if (operations.hasOwnProperty(command)) 
+            operation = operations[command];
+    } 
+  
+  function Calc() {
+      var display = document.getElementById('display');
+      display.value = operation(+storedNum, +display.value);
+      calculationFinished = true;
+      operation = operations.none;
+}
+operations = { 
+    none:     function(left, right) { return right; },
+
+    // Math ops.
+    add:      function(left, right) { return left + right; },
+    minus: function(left, right) { return left - right; },
+    multiply: function(left, right) { return left * right; },
+    divide: function(left, right) { return left / right; }
+};
+
+function convertAmount(){
+var currency = document.getElementById("currency"); //declaring these variables locally works fine - the global declarations were giving hassles - agreed
+var textamount = document.getElementById("amountbox");
+var c;
+var textresult = document.getElementById("resultbox");
+
+  if (currency.value == "pounds"){
+    c = textamount.value * 0.05;
+    textresult.value = c;   
+  }
+  else if (currency.value == "euros"){
+    c = textamount.value * 0.06;
+    textresult.value = c;   
+  }
+  else{
+    c = textamount.value * 0.07;
+    textresult.value = c; 
+  }
+}
+function clearBoxes(){
+    var textamount = document.getElementById("amountbox");
+    var textresult = document.getElementById("resultbox");
+    textamount.value ="";
+    textresult.value ="";
+}
+
+
+$(document).ready(function(){
+    $("#updating").click(function(){
+        $("#updating").slideUp(2000).slideDown(2000);
+    });
+
+    $("#showCalc").click(function(){
+        $("#calc").toggle();
+  });
+
+    $("#showConverter").click(function(){
+        $("#converter").toggle();
+  });
+
+    $("#resetCart").click(function(){
+      $("#resetCart").fadeOut(1000);
+  });
+
+    $("#dissolveButt").click(function(){
+      $("#dissolve").fadeOut(1000).delay(1000);
+      $("#dissolve").delay(1000);
+      alert("We are experiencing technical difficulties! Please bear with us.");
+      $("#dissolve").delay(1000);
+      $("#dissolve").fadeIn(1000);
+    }); 
+
+    // change the font size of the text in the checkout.html page
+    $("#changeFont").click(function(){
+    	// save the color of the text in a variable to improve readability
+    	var color = $("#checkout").css('color');
+    	// what value is this color property and does our if statement test it correctly? You'll find that the RGB value of the current color is returned, therefore, we need to adjust the condition accordingly
+    	console.log(color);
+      if(color ==='rgb(0, 0, 0)') {
+        $("#checkout").css({'color':'red'});
+    }
+      else{
+        $("#checkout").css({'color':'black'});
+        }
+      });
+
+    $("#changeBackground").click(function(){
+      var color1 = $("#dissolve");
+      color1.css("background-color","red");
+      });
+
+    $("#changeFontsize").click(function(){
+      var color1 = $("#dissolve");
+      color1.css("font-size","8px");
+      }); 
+  })
+
+   
+    $(window).on("load",function(){
+      
+  startAnimation2();
+        function startAnimation2(){
+      value2 = $('.whole').css('right') === '50px' ? 0 : '50px';
+      $('.whole').animate({
+          right: value2
+      });
+
+      value3 = $('.whole2').css('left') === '50px' ? 0 : '50px';
+      $('.whole2').animate({ 
+          left: value3
+      });
+
+      $('.whole2').animate({width: 40}, "slow", startAnimation2);
+     }
+
+      var div = $("#MyStoreLogo3");
+        div.animate({height: '300px', opacity: '0.4'}, "slow");
+        div.animate({width: '300px', opacity: '0.8'}, "slow");
+        div.animate({height: '100px', opacity: '0.4'}, "slow");
+        div.animate({width: '100px', opacity: '0.8'}, "slow");
+
+    $( "#MyStoreLogo2" ).animate({
+      width: [ "toggle", "swing" ],
+      height: [ "toggle", "swing" ],
+      opacity: "toggle"
+      }, 5000, "linear");
+
+    $("#MyStoreLogo2").fadeIn(3000);
+    $("#resetCart").fadeIn(1000);
+    $("#saflag").animate({width:'toggle'},6500).animate({width:'toggle'},350);
+    $("#onclickchange").animate({
+        right: '250px',
+        opacity: '0.5',
+        height: '50px',
+        width: '50px',
+        }); 
+
+    var div = $("#chflag");
+    div.animate({height: '40px', opacity: '0.4'}, "slow");
+    div.animate({width: '45px', opacity: '0.8'}, "slow");
+    div.animate({height: '25px', opacity: '0.4'}, "slow");
+    div.animate({width: '30px', opacity: '0.8'}, "slow");
+
+      var div = $("#MyStoreLogo4");
+        startAnimation();
+        function startAnimation(){
+            div.fadeIn(3000)
+            div.delay(100)
+            div.fadeTo(1000, 0.1) 
+            div.delay(100)
+            div.fadeTo(1000,1)
+            div.animate({width: 60}, "slow", startAnimation);
+        }
+})
+
+/*$("#bunny").click(function(){
+    animateDiv('.b');
+   
+});
+$("#mickey").click(function(){
+    animateDiv('.c');
+   
+});*/
+  $("#bunny").click(function(){
+    $(".b").css('opacity', '1');
+    animateDiv('.b');
+  });
+
+  $("#mickey").click(function(){
+    $(".c").css('opacity', '1');
+     animateDiv('.c');    
+  });
+  
+
+function makeNewPosition(){
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];    
+    
+}
+
+function animateDiv(myclass){
+    var newq = makeNewPosition();
+    $(myclass).animate({ top: newq[0], left: newq[1] }, 1000,   function(){
+      animateDiv(myclass);        
+    });
+    
+};
+
+ </script>
+
+</html>

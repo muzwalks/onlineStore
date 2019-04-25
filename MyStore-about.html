@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXyiC1mRxd8ddx8PxKyuLp8-NyADI59Gc&callback=initMap">
+</script>
+
+<title>Murray's Online Store About</title>
+<link href ="MyStore.css" rel="stylesheet" type="text/css">
+</head>
+<header>
+            <nav id="mainNav" class = "mynavbar1">
+        <table>
+          <tr>
+            <td><a href="MyStore-home-english.html">
+                <img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style="float:left"></a>
+            </td>
+                        <td><a class="apache">APACHE<BR>RENTALS</a>
+                        </td>
+                        <td class ="tabletop"><a href="MyStore-home-english.html">HOME |</a><br>
+                          <a href="MyStore-home-english.html"></a>  
+                        </td>
+            <td class ="tabletop"><a href="MyStore-catalogue.html">CATALOGUE |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-QUOTE.html">QUOTE |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-team.html">THE TEAM |</a><br>
+                <a href="MyStore-home-english.html"></a>    
+            </td>
+            <td class ="tabletop"><a href="MyStore-about.html">ABOUT US</a><br>
+                <a href="MyStore-home-english.html">
+                <img src="images/saflag.png" alt= "SA Flag" style="float:right; padding-left:5px" class="flagsizer" ></a>
+                <a href="MyStore-home-chinese.html">
+                <img src="images/chinese.png" alt= "SA Flag" style="float:right" class="flagsizer"></a>
+            </td>
+            <td ><form role="search">
+                                <div class="search-control">
+                            <input type="search" id="site-search" name="q" placeholder="Search the site..." style="margin-left:20px">
+                          <button >Search</button>
+            <td class ="tabletop">
+              <a href="MyStore-checkout.html">
+              <img src="images/cartempty.png" id = "onclickchange" alt= "Shopping Cart"  class="flagsizer" style="margin-left:20px; width:30px; height: 30px "></a>
+            </td>
+                </div>
+            </form>
+        </tr>
+    </table>
+   </nav>
+ </header>
+ <body>
+ 	<div class="imgdetails2">
+ 		<a class="quotebar" style="margin-left:105px"><i>"These guys really know their stuff. They gave me 24-7 support on Jurassic Park and ET."</i> Steven Spielberg</a>
+ 	</div>
+ 	</div><br>
+ 	<h1>ABOUT US</h1>
+ 	<p style="width:70%;margin-left:15%; margin-right:15%"> Although being a small facility by international standards, we pride ourselves on the standard of our equipment and the levels of service we strive for. We are in a constant cycle of replacing equipment with the latest technology on the market. The result is that our inventory, by no means the biggest, is in excellent condition with the equipment being serviced regularly by certified engineers at the respected agents. <br> <br>Our main focus is on supplying camera packages to the industry but we also have some excellent lighting, grips equipment, camera accessories and location sound equipment to facilitate a complete location shoot.  </p>
+
+<h1>GET IN TOUCH</h1>
+<p style="width:70%;margin-left:15%; margin-right:15%;">Our head office is located here:<BR><b> 37 Erlswold Way, Saxonwold, 2196, Johannesburg.</b> <br><BR>Feel free to send us an email or drop us a line.<br>
+  
+
+<a href="mailto:sales@apache.com" style="line-height: 1.7em">sales@apache.com</a><br>
+<a href="callto:0834567889"style="line-height: 1.7em">0834567889</a></p><br>
+
+<div id="map"></div>
+<br>
+          
+
+
+
+
+</body>
+
+<footer>
+		<nav id="mainNav" class = "foot">
+			<table style="padding-top:5px">
+				<tr><td><a href="mailto:sales@apache.com" style="line-height: 1.7em">sales@apache.com</a><br><!--I included the email and the anchor because some people prefer to copy and paste the address into there own email provider-->
+						<a href="callto:0834567889"style="line-height: 1.7em">0834567889</a>
+					</td>
+					<td>
+               			<a href="MyStore-home-english.html">
+							<img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style=" margin-left:120px"</a><br>
+							<a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
+					</td>
+					<td>
+               			<a href="">
+							<img src="images/twitter.png" alt= "My Store Logo" class="sociallogo" style=" margin-left:150px"</a>
+					</td>
+					<td>
+               			<a href="">
+							<img src="images/facebook.png" alt= "My Store Logo" class="sociallogo" </a>
+					</td>
+				</tr>
+			</table>
+			
+       	</nav>
+</footer>
+<script type="text/javascript">
+  var fullCart = "images/cartfull.png";
+     var getSource = document.getElementById("onclickchange");
+  if (localStorage.length > 0)
+    {
+            getSource.src = fullCart;
+    }
+
+    var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -26.165386, lng: 28.042721},
+                    zoom: 8
+        });
+      }
+          
+</script>
+ 
+
+</html>
+

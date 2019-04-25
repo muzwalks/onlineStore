@@ -1,0 +1,563 @@
+.mynavbar1{
+	padding-left:160px;
+	background-color:#dc9135;
+	font-size: 16px;
+	padding-top: 1px;
+	height:70px;
+	}
+	.center_div{
+   margin-left: 35%;
+   width: 60%;
+   margin-right: 30%;
+}
+   .center_div1{
+    margin: 0 auto;
+    width:100% ;/* value of your choice which suits your alignment */   
+}
+.cartbutton{
+	background-color:#dc9135;
+	border-radius:6px;
+	height:40px;
+}
+
+.cartbutton:hover{
+	background-color:#992E0E;
+	color:white;
+}
+@keyframes salebox {
+    0%   {background-color: :#dc9135;}
+    25%  {background-color: red;}
+    50%  {background-color: #F8462A;}
+    100% {background-color: #FFF47F}
+}
+.table{
+	border:1px solid;
+	padding:5px;
+	width:80%;
+	margin-left:10%;
+	text-align: left;
+}
+.divanimation{
+	animation-iteration-count:1000;
+    animation-name:salebox;
+    animation-duration: 8s;
+    border-radius:5px; 
+	width:24%;
+	color:black;
+	font-weight: bold;
+	margin-left: 37%;
+	height:auto;
+	padding:10px;
+	font-size: 20px;
+	text-align: center;
+}
+.imgs{
+    opacity: 0.0;
+}
+.foot{
+	padding-left: 325px;
+	margin:0;
+	background-color:#dc9135;
+	height:90px;
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+.carttext{
+	width: 90px;
+	border: none;
+	vertical-align: top;
+	margin-bottom: 4px;
+}
+.cartbutton2{
+	width: 25px;
+}
+
+.tabletop{
+	vertical-align:top;
+}
+html, body{
+     height: 100%;
+     margin: 0;
+     padding: 0;
+     color:black;
+     font-family: Helvetica;
+     text-decoration: none;
+    
+}
+.navbarlogo{
+	width:60px;
+	height:60px;
+}
+img {
+    filter: brightness(99%); /*capstone project requirement*/
+    }
+
+.sociallogo{
+	width:40px;
+	height:40px;
+}
+.apache{
+	float:left; 
+	font-size: 20px; 
+	padding-top:3px; 
+	margin-right:40px; 
+	text-align:left; 
+}
+.apache:hover{
+	color:black;
+}
+
+.imgdetails{
+	background-image: url('images/darrell.png');
+	height: 400px;
+	width:100%;
+	margin-top:0;
+	padding:0;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    }
+
+.quotebar{
+  /* margin:auto; this has no effect on the positioning of my anchor tag*/
+    /*float:center; why does this have no effect? -- The float property does not have a center value, so you'd need to use something different. */
+	/*margin-top:160px;*/
+	height:45px;
+	bottom: 28%;	/* Please note these properties and their values - you can try changing them to see their effects.*/
+	width:auto;
+	padding:10px;
+	margin-left:5%;
+	position: absolute;
+	background-color: white; 
+	opacity:0.7; 
+	border-radius:5px; 
+	font-size: 20px;
+	text-align: center;
+	}
+
+.quotebar:hover{
+	color:black;
+	}
+
+.imgdetails2{
+	background-image: url('images/about.png');
+	height: 400px;
+	width:100%;
+	margin:0;
+	padding:0;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    }
+
+.flagsizer{
+	width:30px;
+	height:25px;
+	margin-top:5px;
+	margin-right:7px;
+}
+a{
+	color:black;
+	text-decoration:none;
+	font-weight: bold;
+}
+a:hover{
+	color:#992E0E;
+	text-decoration: none;
+}
+article{
+	border: 2px solid #992E0E;
+	border-radius: 4px;
+	display:inline-block;
+	font-family: Helvetica;
+	width:330px;
+	height:auto;
+	padding:3px;
+	}
+.textpad{
+	padding-left: 4px;
+}
+.equipment{
+	border: 2px solid #992E0E;
+	border-radius: 4px;
+	font-family: Helvetica;
+	width:210px;
+	padding:5px;
+}
+
+	.equipmentbig{
+	border: 2px solid #992E0E;
+	border-radius: 4px;
+	font-family: Helvetica;
+	width:370px;
+	padding:5px;
+	}
+
+.portraitsizer{
+	width: 320px;
+	height: 400px;
+}
+.img-thumbnail{
+	border-radius:8px; 
+	width: 160px;
+	height:150px;
+}
+.img-big{
+	border-radius:8px; 
+	width: 320px;
+	height:300px;
+}
+
+h1{
+	font-size: 30px;
+	font-family: Helvetica;
+	text-align:center;
+	color:#992E0E ;
+}
+
+h2{
+	font-size: 22px;
+	font-family: Helvetica;
+	
+	color:#992E0E ;
+}
+
+.butt{
+	background-color: #992E0E;
+	border:none;
+}
+
+input[type=text] { 
+   	
+    padding: 2px;
+    border: 1px solid white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+	margin:auto;
+   	width:80%;
+    background-color: #992E0E;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #D1912A;
+}
+.container1 { /*I tried using an article here but it was less user-friendly */
+    margin-left: 34%;
+    margin-right:36%;
+    width: 30%;
+    border-radius: 5px;
+    background-color: transparent;
+    height:auto;
+    font-family: Helvetica;
+    transition: all 1s ease-in-out;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #dc9135;
+    color: black;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #dc9135;
+    color: black;
+}
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 400px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /*Calculator CSS*/
+
+ .numberbutton:active {
+    background-color: #d0d3d8;
+}
+.opbutton:active{
+	background-color: #f2db52;
+}
+.opbutton{
+	background-color: #f9e677;
+}
+.clearbutton{
+	background-color: #ea7a6e;
+}
+.clearbutton:active{
+	background-color:#ed5747;
+}
+.calcinput[type=text]  {    
+    
+    display:inline-block;
+    width:88%;
+    padding: 6px;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.calcbutton{
+	width:22%;
+	height:50px;
+    color: black;
+    border: 5px solid #992E0E;
+    cursor: pointer;
+    font-size: 20px;
+    padding:0;
+    float:left;
+}
+.whitebutton{
+	background-color: white;
+}
+     
+     #MyStoreLogo3 {
+    
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 3548px;
+    height: 1653px;
+    margin: -500px 0 0 -950px;
+}
+
+.dropdownmenu1{
+ display: none;
+}
+
+/* Navbar container */
+.navbar1 {
+  overflow: hidden;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar1 a {
+  float: left;
+  font-size: 16px;
+  text-align: center;
+  padding: 2px 8px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  padding: 2px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdowncontent {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  background-color: #dc9135;
+}
+
+/* Links inside the dropdown */
+.dropdowncontent a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdowncontent a:hover {
+  background-color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdowncontent {
+  display: block;
+}
+
+.awesome {
+      
+      
+      width:100%;
+      
+      animation:colorchange 20s;     
+    }
+
+    @keyframes colorchange {
+      0% {
+        
+        background-color: blue;
+      }
+      
+      10% {
+        
+        background-color: #8e44ad;
+      }
+      
+      20% {
+        
+        background-color: #1abc9c;
+      }
+      
+      30% {
+        
+        background-color: #d35400;
+      }
+      
+      40% {
+        
+        background-color: blue;
+      }
+      
+      50% {
+        
+        background-color: #34495e;
+      }
+      
+      60% {
+        
+        background-color: blue;
+      }
+      
+      70% {
+        
+        background-color: #2980b9;
+      }
+      80% {
+     
+        background-color: #f1c40f;
+      }
+      
+      90% {
+     
+        background-color: #2980b9;
+      }
+      
+      100% {
+        
+        background-color: pink;
+      }
+    }
+	 
+	 .whole {
+   
+    position: relative;
+}
+
+	.whole2 {
+	   
+	    position: relative;
+	}
+
+	/*div#container1 {height:1000px;width:1000px;}*/
+
+.blacktext{
+	color:black;
+}
+
+div.b {
+width: 50px;
+height:50px;
+position:fixed;
+    
+/*background-image: url(images/rentals/bunny.png);*/
+    
+}
+div.c {
+width: 50px;
+height:50px;
+position:fixed;
+/*background-image: url(images/rentals/mickey.png);*/
+    
+}
+
+	
+
+

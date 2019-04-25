@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>Murray's Online Store Catalogue </title>
+<link href ="MyStore.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+	
+	 	var local = localStorage.getItem(localStorage.key(0));
+
+function addtoCart(equipment,price)
+{   
+    	var fullCart = "images/cartfull.png";
+     	var getSource = document.getElementById("onclickchange");
+	    getSource.src = fullCart;
+       	
+        total = +price + +local; 
+        alert("Your current total is: R"+ total);
+        sessionStorage.setItem(equipment,price);
+        localStorage.setItem("Total", total);
+}
+</script>
+
+</head>
+<body>
+<header>
+			<nav id="mainNav" class = "mynavbar1">
+        <table>
+          <tr>
+            <td><a href="MyStore-home-english.html">
+                <img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style="float:left"></a>
+            </td>
+            <td><a class="apache">APACHE<BR>RENTALS</a>
+            </td>
+			<td class ="tabletop"><a href="MyStore-home-english.html">HOME |</a><br>
+			  <a href="MyStore-home-english.html"></a>	
+			</td>
+            <td class ="tabletop"><a href="MyStore-catalogue.html">CATALOGUE |</a><br>
+              <a href="MyStore-home-english.html"></a>	
+            </td>
+            <td class ="tabletop"><a href="MyStore-QUOTE.html">QUOTE |</a><br>
+              <a href="MyStore-home-english.html"></a>	
+            </td>
+            <td class ="tabletop"><a href="MyStore-team.html">THE TEAM |</a><br>
+            	<a href="MyStore-home-english.html"></a>	
+            </td>
+            <td class ="tabletop"><a href="MyStore-about.html">ABOUT US</a><br>
+            	<a href="MyStore-home-english.html">
+            	<img src="images/saflag.png" alt= "SA Flag" style="float:right; padding-left:5px" class="flagsizer" ></a>
+            	<a href="MyStore-home-chinese.html">
+            	<img src="images/chinese.png" alt= "SA Flag" style="float:right" class="flagsizer"></a>
+            </td>
+            <td><form role="search">
+    			<div class="search-control">
+        		<input type="search" id="site-search" name="q" placeholder="Search the site..." style="margin-left:20px">
+        		<button >Search</button>
+            <td class ="tabletop">
+              <a href="MyStore-checkout.html">
+              <img src="images/cartempty.png" id = "onclickchange" alt= "Shopping Cart"  class="flagsizer" style="margin-left:20px; width:30px; height: 30px "></a>
+            </td>
+    			</div>
+  			</form>
+   		</tr>
+   	</table>
+   </nav>
+ </header>
+ <br>
+
+<div class="container" align="middle">
+  
+    	<div class ="equipmentbig"  >
+    		<img id="Sony Radio Mic" src="images/rentals/radiomic.jpg" alt="Sony Radio Mic" class="shadow p-3 mb-4 bg-white rounded"><br><b>Sony Radio Mic</b>
+    		<h3><div style="text-decoration: line-through">R300/week</div><div style="color:red">
+          R270/week</div></h3> 
+    		<ul class="list-unstyled" align="left" style="margin-left:110px">
+        		<li>Kariochi</li>
+            <li>On/off Switch</li>
+            <li>Extra Long Cable</li>
+            <li>Mostly Works</li>
+            <li>Red and Blue</li>
+        	</ul>
+    		<button onclick ="addtoCart('Sony Radio Mic','270')" id="Sony Radio Mic" value="270" class = "cartbutton">Add to cart</button>
+    	</div>
+	</div>
+
+<br>
+</body>
+
+<footer>
+		<nav id="mainNav" class = "foot">
+			<table style="padding-top:5px">
+				<tr><td><a href="mailto:sales@apache.com" style="line-height: 1.7em">sales@apache.com</a><br><!--I included the email and the anchor because some people prefer to copy and paste the address into there own email provider-->
+						<a href="callto:0834567889"style="line-height: 1.7em">0834567889</a>
+					</td>
+					<td>
+               			<a href="MyStore-home-english.html">
+							<img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style=" margin-left:120px"</a><br>
+							<a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
+					</td>
+					<td>
+               			<a href="">
+              <img src="images/twitter.png" alt= "My Store Logo" class="sociallogo" style=" margin-left:150px"</a>
+					</td>
+					<td>
+               			<a href="">
+							<img src="images/facebook.png" alt= "My Store Logo" class="sociallogo" </a>
+					</td>
+				</tr>
+			</table>
+			
+       	</nav>
+</footer>
+<script type="text/javascript">
+
+	 var fullCart = "images/cartfull.png";
+     var getSource = document.getElementById("onclickchange");
+		if (localStorage.length > 0)
+    	{
+            getSource.src = fullCart;
+    	}
+
+</script>
+</html>
+
+            

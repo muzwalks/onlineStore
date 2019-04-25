@@ -1,0 +1,216 @@
+<!DOCTYPE html> 
+<html​ ​lang​=​"en"​>   
+​<head><link href ="calculator.css" rel="stylesheet" type="text/css">
+<script>
+	//ALTERNATE IMAGES
+	function imgAlternate(){
+        var sourceVic = "images/victor.jpg";
+        var sourceDar = "images/darrel.jpg";
+        var getSource = document.getElementById("onclickchange");
+       
+	if (getSource.src.match(sourceVic))
+		{
+            getSource.src = sourceDar;
+        }
+        else
+        {
+            getSource.src = sourceVic
+        }
+    }
+     /* I figured this out through trial and error - it didn't work with this declaration:
+     var getsource = document.getElementById("onclickchange").src; The declaration had to be as above and then the .src added to var getSource WITHIN the if else conditional statement. Any reason why this would need to be like this? 
+
+     -- Please note my comments in the comments file. */
+
+	//VANISHING REAPPEARING PHOTO
+function imgVanish() {
+    var x = document.getElementById("Murray");
+    if (x.style.visibility == "hidden") {
+        x.style.visibility = "visible";
+    } else {
+        x.style.visibility = "hidden";
+    }
+}
+	//ATTEMPTIMG TO CLOSE BROWSER WINDOW
+function close_window() { //this works now - not sure why it wasn't working before - maybe I'm going nuts. I read, though, that browser security prevented windows from being closed with scripts!!!
+
+// Hahahaha with ever-changing browser architectures, it's very easy to feel as though you're going nuts. I've left comments about this in the comments file.
+  if (confirm("Close Window?")) {
+    window.close();
+  }
+}
+	//CHANGE BACKGROUND COLOR EVERY 10SECS
+function startAnimation() {
+    var element = document.getElementById("myDIV");
+    element.classList.add("colorAnimation");
+}
+	//STOP BACKGROUND COLOR CHANGE
+function stopAnimation(){
+	var element = document.getElementById("myDIV");
+	element.classList.remove("colorAnimation");
+}
+	//RECORD BUTTON PRESSES
+var x = 0;
+function clickCounter(){
+	x += 1;
+	document.getElementById("clicks").innerHTML = x;
+}
+
+	//CURRENCY CONVERSION
+function convertAmount(){
+var currency = document.getElementById("currency"); //declaring these variables locally works fine - the global declarations were giving hassles - agreed
+var textamount = document.getElementById("amountbox");
+var c;
+var textresult = document.getElementById("resultbox");
+
+	if (currency.value == "pounds"){
+		c = textamount.value * 0.05;
+		textresult.value = c;		
+	}
+	else if (currency.value == "euros"){
+		c = textamount.value * 0.06;
+		textresult.value = c;		
+	}
+	else{
+		c = textamount.value * 0.07;
+		textresult.value = c;	
+	}
+}
+function clearBoxes(){
+    var textamount = document.getElementById("amountbox");
+    var textresult = document.getElementById("resultbox");
+    textamount.value ="";
+    textresult.value ="";
+}
+
+	//CALCULATOR
+function numInput(digit){
+		var display = document.getElementById('display');
+		clearPreviousResult();
+    	if (display.value === '0') {
+    		display.value = '';
+    	}
+    	display.value += digit;
+	}
+	
+    function clearPreviousResult() {
+    var display = document.getElementById('display');
+    if (calculationFinished) {
+        display.value = '0';
+        calculationFinished = false;
+    }
+}
+
+	function clearDisplay(){
+		var display = document.getElementById('display');
+		display.value = '0';
+		storedNum = '0';
+    	calculationFinished = true; 
+    	operation = operations.none;
+}
+
+	function setOperation(command){
+		var display = document.getElementById('display');
+		Calc();
+		storedNum = display.value;
+    		if (operations.hasOwnProperty(command)) 
+        		operation = operations[command];
+		}	
+	
+	function Calc() {
+    	var display = document.getElementById('display');
+    	display.value = operation(+storedNum, +display.value);
+    	calculationFinished = true;
+    	operation = operations.none;
+}
+operations = { 
+    none:     function(left, right) { return right; },
+
+    // Math ops.
+    add:      function(left, right) { return left + right; },
+    minus: function(left, right) { return left - right; },
+    multiply: function(left, right) { return left * right; },
+    divide: function(left, right) { return left / right; }
+};
+
+</script>   
+	​<title>​First Script​</title>     
+		​   ​
+</head>   
+​<body id= "myDIV" onload = "clearDisplay()">
+	
+	<h1 id="Head" align="middle">​MURRAY'S AWESOME JAVASCRIPT PRACTICE</h1><br><br>
+	<table>
+		<tr>
+			<td style = "vertical-align:top"> 
+				<!--onlick image vanishes-->
+				<button class = "buttons" onclick="imgVanish(),clickCounter()" style="position: fixed; width:auto" >Disappear/Reappear!</button>
+				<img id="Murray" src ="images/murray.jpg" alt="Murray" class="imgs"> 
+            </td>
+    		<td style = "vertical-align:top">
+    			<!--onclick image changes-->
+    			<button class = "buttons" onclick="imgAlternate(),clickCounter()" style="position: fixed;width:auto">Alternate pics!</button >
+        		<img id="onclickchange" src ="images/victor.jpg" alt="Victor" class = "imgs">
+    		</td>
+    	    	  
+    		<td style = "vertical-align:top">
+    			<!--<input type ="submit" value="Change Background Color" onclick="myFunction()"> I COULD NOT GET THIS TO WORK WHILE THE BUTTON WAS PART OF A FORM - WHY IS THAT? ALSO, IS THERE AN INLINE METHOD FOR (ONCLICK EVENT + ADDCLASS) SO THAT YOU DON'T HAVE TO SCRIPT IT-->
+
+    			<button class ="buttons" onclick = "startAnimation(), clickCounter()">Change Background Color</button>
+
+    			<button class = "buttons" onclick = "stopAnimation(), clickCounter()" style="margin-left: 10px">Stop</button>
+    			<form>    				
+   					<!--tally button presses-->
+    				<p>BUTTON CLICKS: <a id="clicks">0</a></p>
+    				<!--currency converter-->
+    				<label> CURRENCY CONVERTER</label><br><br>
+    				<label style="float:left"> Amount</label><br>
+    				<input type ="text" id ="amountbox" name="box1"><br>
+    				<select id="currency" name="converter" >
+      					<option id="EUR" value="euros">EUR</option>
+      					<option id="USD" value ="dollars" >USD</option>
+      					<option id="GBP" value = "pounds">GBP</option>
+    				</select><br>
+    				<label for "result"> Result</label><br>
+    				<input type ="text" id ="resultbox" name="result" >
+    		   		<!--<input type ="submit" id ="Convert" onclick="convertAmount()"> why does this not work? I spent hours thinking it was the JS, but it's this stupid form button ;-) -->
+    			</form>
+    			<button class = "buttons" onclick="convertAmount(), clickCounter()">Convert</button>
+                <button class = "buttons" onclick="clearBoxes(), clickCounter()" style="margin-left: 10px">Clear</button>
+    		</td>
+
+   			<td style="vertical-align:top;">
+    			<div class="calculator"  >
+    				
+    				<label for "screening">COOL CALCULATOR</label><br><BR>
+    				<input type ="text" id ="display" name="screening" style="width:88%; background-color: black; color:white; border:none;text-align: right;height:auto; font-size:28px ;margin-bottom: 0"><br>
+    					    					
+    				<button onclick="numInput('7'),clickCounter()" id="7" value="7" class="numberbutton">7</button>
+    				<button onclick="numInput('8'),clickCounter()" id="8" value="8" class="numberbutton">8</button>
+    				<button onclick="numInput('9'),clickCounter()" id="9" value="9" class="numberbutton">9</button>
+    				<button onclick="setOperation('multiply'),clickCounter()" id="x" value="x" class="opbutton">x</button>
+
+    				<button onclick="numInput('4'),clickCounter()" id="4" value="4" class="numberbutton">4</button>
+    				<button onclick="numInput('5'),clickCounter()" id="5" value="5" class="numberbutton">5</button>
+    				<button onclick="numInput('6'),clickCounter()" id="6" value="6" class="numberbutton">6</button>
+    				<button onclick="setOperation('divide'),clickCounter()" id="÷" value="÷" class="opbutton">÷</button>
+
+    				<button onclick="numInput('1'),clickCounter()" id="1" value="1" class="numberbutton">1</button>
+    				<button onclick="numInput('2'),clickCounter()" id="2" value="2" class="numberbutton">2</button>
+    				<button onclick="numInput('3'),clickCounter()" id="3" value="3" class="numberbutton">3</button>
+    				<button onclick="setOperation('minus')(),clickCounter()" id="-" value="-" class="opbutton">-</button>
+
+    				<button onclick="numInput('0'),clickCounter()" id="0" value="0" class="numberbutton">0</button>
+    				<button onclick="clearDisplay(),clickCounter()" id="C" value="C" class="clearbutton">C</button>
+    				<button onclick="Calc(),clickCounter()" id="=" value="=" class="opbutton">=</button>
+    				<button onclick="setOperation('add'),clickCounter()" id="+" value="+" class="opbutton">+</button>	 
+				</div>
+				<div style="float:right; margin-top:50px; margin-right:35px; color:#992E0E; font-weight: bold">
+					<a href ="" onclick="close_window(), clickCounter();return false;" style="text-decoration: none">CLOSE</a>
+    			</div>
+			</td>
+		</tr>
+</table>
+
+</body> 
+</html>

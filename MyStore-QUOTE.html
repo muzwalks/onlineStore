@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>Murray's Online Store Quote </title>
+<link href ="MyStore.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<header>
+      <nav id="mainNav" class = "mynavbar1">
+        <table>
+          <tr>
+            <td><a href="MyStore-home-english.html">
+                <img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style="float:left"></a>
+            </td>
+                      <td><a class="apache">APACHE<BR>RENTALS</a>
+                      </td>
+            <td class ="tabletop"><a href="MyStore-home-english.html">HOME |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-catalogue.html">CATALOGUE |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-QUOTE.html">QUOTE |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-team.html">THE TEAM |</a><br>
+              <a href="MyStore-home-english.html"></a>  
+            </td>
+            <td class ="tabletop"><a href="MyStore-about.html">ABOUT US</a><br>
+              <a href="MyStore-home-english.html">
+              <img src="images/saflag.png" alt= "SA Flag" style="float:right; padding-left:5px" class="flagsizer" ></a>
+              <a href="MyStore-home-chinese.html">
+              <img src="images/chinese.png" alt= "SA Flag" style="float:right" class="flagsizer"></a>
+            </td>
+            <td ><form role="search">
+                  <div class="search-control">
+                  <input type="search" id="site-search" name="q" placeholder="Search the site..." style="margin-left:20px">
+                  <button >Search</button>
+            <td class ="tabletop">
+              <a href="MyStore-checkout.html">
+              <img src="images/cartempty.png" id = "onclickchange" alt= "Shopping Cart"  class="flagsizer" style="margin-left:20px; width:30px; height: 30px "></a>
+            </td>
+          </div>
+        </form>
+      </tr>
+    </table>
+   </nav>
+ </header>
+</form>
+ <br>
+ 
+ <body>
+ 	<h1> GET A QUOTE</h1>
+  <p style="font-family:Helvetica; font-size:14" align="middle">Please fill out the form</p>
+  <div class="container center_div" >
+      
+           <form action="#action_page.php" method="post">
+            <div class="form-group row">
+                 <label for="fname" class="col-sm-2 col-form-label">First Name</label><br>
+              <div class="col-sm-5">
+                 <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+              </div>
+            </div>
+            <div class="form-group row">
+                 <label for="email" class="col-sm-2 col-form-label">Email</label><br>
+              <div class="col-sm-5">
+                 <input type="text" id="msg" name="email" placeholder="Your email" required>
+              </div>
+            </div>
+            <div class="form-group row">
+                 <label for="city" class="col-sm-2 col-form-label">City</label><br>
+              <div class="col-5">
+                   <select id="city" name="city">
+                    <option value="city">Johannesburg</option>
+                    <option value="city">Cape Town</option>
+                    <option value="city">Durban</option>
+                   </select>
+              </div>
+            </div>
+            <div class="form-group row">
+                 <label for="message" class="col-sm-2 col-form-label">Message</label><br>
+              <div class="col-5">
+                   <textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-7">
+                  <input type="submit" value="Submit">
+              </div>
+            </div>
+             </form>
+  </div>
+  <br>
+
+</body>
+<footer>
+		<nav id="mainNav" class = "foot">
+			<table style="padding-top:5px">
+				<tr><td><a href="mailto:sales@apache.com" style="line-height: 1.7em">sales@apache.com</a><br><!--I included the email and the anchor because some people prefer to copy and paste the address into there own email provider-->
+						<a href="callto:0834567889"style="line-height: 1.7em">0834567889</a>
+					</td>
+					<td>
+               			<a href="MyStore-home-english.html">
+							<img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style=" margin-left:120px"</a><br>
+							<a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
+					</td>
+					<td>
+               			<a href="">
+              <img src="images/twitter.png" alt= "My Store Logo" class="sociallogo" style=" margin-left:150px"</a>
+					</td>
+					<td>
+               			<a href="">
+							<img src="images/facebook.png" alt= "My Store Logo" class="sociallogo" </a>
+					</td>
+				</tr>
+			</table>
+			
+       	</nav>
+</footer>
+<script type="text/javascript">
+  var fullCart = "images/cartfull.png";
+     var getSource = document.getElementById("onclickchange");
+  if (localStorage.length > 0)
+    {
+            getSource.src = fullCart;
+    }
+          
+</script>
+</html>
+
