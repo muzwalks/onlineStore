@@ -1,0 +1,1 @@
+<?php header( 'Location: /mystore-home-english.html' ) ;  ?>
