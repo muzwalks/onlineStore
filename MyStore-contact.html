@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <title>Murray's Online Store Contact</title>
+    <link href="MyStore.css" rel="stylesheet" type="text/css" />
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg mynavbar1">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+        <div class="navbar-nav" style = "width:100%">
+          <a href="MyStore-home-english.html"><img src="images/apacheLogo.png" alt= "Apache Logo" style="width:190px; height:40px"></a>          
+            <div style="margin-top:9px; margin-left:10px">
+              <a class="navbar-brand" style="margin-left:320px"><a href='MyStore-home-english.html' style="text-decoration: none">Home</a>
+              <a class="navbar-brand"><a href="MyStore-catalogue.html"style="text-decoration: none">Catalogue</a>
+              <a class="navbar-brand"><a href="MyStore-QUOTE.html" style="text-decoration: none">Quote</a>
+              <a class="navbar-brand"><a href="MyStore-team.html" style="text-decoration: none">The Team</a>        
+              <a class="navbar-brand"><a href="MyStore-contact.html" style="text-decoration: none">Contact Us</a>
+            </div>
+              <a href="MyStore-checkout.html"><img src="images/cartempty.png"  id = "onclickchange" alt= "Shopping Cart"   style=" width:30px; height: 30px; margin-top:5px;margin-left:30px "></a> 
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <body>
+    <br />
+    <h1>CONTACT US</h1>
+    <br />
+    <!-- the booostrap grid really makes the page look more organized-->
+    <div class="container" align="middle">
+      
+          <ul class="list-unstyled">
+            <li style="font-weight:bold">Johannesburg</li><br>
+            <li>Office 111, Sandton Towers, Sandton</li><br>
+            <li>011-646 7896</li><br>
+            <li style="font-weight:bold">Durban</li><br>
+            <li>Office 112, Mulberry Park, Mulberry</li><br>
+            <li>021-646 7894</li><br>
+            <li style="font-weight:bold">Cape Town</li><br>
+            <li>Office 113, Garden Centre, Zonnebloem</li><br>
+            <li>012-646 7890</li>
+          </ul>
+        
+    </div>
+  </body>
+
+  <footer>	
+    <nav class="navbar navbar-expand-lg footsy">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+        <div class="navbar-nav" style = "width:100%">
+          <div style="margin-top:6px">
+            <a href=""><img src="images/twitter.png" alt= "My Store Logo" class="sociallogo" style=" margin-left:170px"</a>
+            <a href=""><img src="images/facebook.png" alt= "My Store Logo" class="sociallogo" </a>
+          </div>
+          <a href="MyStore-home-english.html"><img src="images/apacheLogo.png" id = "onclickchange" alt= "Apache Logo"   style="margin-left:260px; width:190px; height: 40px "></a>          <div style="margin-top:9px; margin-left:160px">
+          <a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
+        </div>   
+      </div>
+    </nav>    
+  </footer>
+
+  <script type="text/javascript">
+    var fullCart = "images/cartfull.png";
+    var getSource = document.getElementById("onclickchange");
+    if (localStorage.length > 0) {
+      getSource.src = fullCart;
+    }
+  </script>
+</html>

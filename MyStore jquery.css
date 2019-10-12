@@ -8,7 +8,6 @@ body {
   font-family: "Barlow", sans-serif;
   text-decoration: none;
   overflow-x: hidden;
-  background-color: #e3cbaa;
 }
 
 .mynavbar1 {
@@ -38,27 +37,52 @@ body {
   width: 100%; /* value of your choice which suits your alignment */
 }
 .cartbutton {
-  background-color: #e3cbaa;
-  border-radius: 0px;
+  background-color: #2d2d2d;
+  border-radius: 6px;
   height: 40px;
-  color: #8f98e9;
-  font-weight: bold;
+  color: white;
 }
 
 .cartbutton:hover {
-  background-color: #8f98e9;
+  background-color: white;
   color: #2d2d2d;
 }
-
+@keyframes salebox {
+  0% {
+    background-color: #dc9135;
+  }
+  25% {
+    background-color: red;
+  }
+  50% {
+    background-color: #f8462a;
+  }
+  100% {
+    background-color: #fff47f;
+  }
+}
 .table {
   border: 1px solid;
   padding: 5px;
   width: 80%;
   margin-left: 10%;
   text-align: left;
-  color: #2d2d2d;
+  color:#2d2d2d
 }
-
+.divanimation {
+  animation-iteration-count: 1000;
+  animation-name: salebox;
+  animation-duration: 8s;
+  border-radius: 5px;
+  width: 24%;
+  color: black;
+  font-weight: bold;
+  margin-left: 37%;
+  height: auto;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+}
 .imgs {
   opacity: 0;
 }
@@ -73,20 +97,8 @@ body {
   width: 25px;
 }
 
-.checkoutButtons {
-  background-color: #e3cbaa;
-}
-
 .tabletop {
   vertical-align: top;
-}
-
-h3 {
-  color: #2d2d2d;
-}
-
-li {
-  color: #2d2d2d;
 }
 
 .navbarlogo {
@@ -114,12 +126,32 @@ img {
 
 .imgdetails {
   background-image: url("images/frontpage2.png");
-  height: 500px;
+  height: 400px;
   width: 100%;
   margin-top: 0;
   padding: 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.quotebar2 {
+  height: 10px;
+  bottom: 10%;
+  /* bottom: 1%; Please note these properties and their values - you can try changing them to see their effects. */
+  width: auto;
+  /* padding: 10px; */
+  margin-left: 5%;
+  position: absolute;
+  /* background-color: white;  */
+  /* opacity: 0.7; */
+  border-radius: 5px;
+  font-size: 20px;
+  /* text-align: center; */
+  color: white;
+}
+
+.quotebar:hover {
+  color: black;
 }
 
 .imgdetails2 {
@@ -184,14 +216,13 @@ img {
 a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 a:hover {
-  color: #8f98e9;
+  color: #2d2d2d;
   text-decoration: none;
 }
 article {
-  border: 2px solid white;
+  border: 2px solid #2d2d2d;
   border-radius: 4px;
   display: inline-block;
   font-family: "Barlow", sans-serif;
@@ -201,22 +232,21 @@ article {
 }
 .textpad {
   padding-left: 4px;
-  color: #2d2d2d;
 }
 .equipment {
-  border: 2px solid white;
+  border: 2px solid #2d2d2d;
   border-radius: 4px;
+  font-family: Helvetica;
   width: 210px;
   padding: 5px;
-  color: #2d2d2d;
 }
 
 .equipmentbig {
-  border: 2px solid white;
+  border: 2px solid #2d2d2d;
   border-radius: 4px;
+  font-family: Helvetica;
   width: 370px;
   padding: 5px;
-  color: #2d2d2d;
 }
 
 .portraitsizer {
@@ -228,7 +258,6 @@ article {
   width: 160px;
   height: 150px;
 }
-
 .img-big {
   border-radius: 8px;
   width: 320px;
@@ -354,15 +383,15 @@ input[type="submit"]:hover {
 
 .close:hover,
 .close:focus {
-  color: white;
+  color: #000;
   text-decoration: none;
   cursor: pointer;
 }
 
 .modal-header {
-  padding: 6px 4px;
-  height: 45px;
-  background-color: #2d2d2d;
+  padding: 2px 16px;
+  background-color: #dc9135;
+  color: black;
 }
 
 .modal-body {
@@ -370,9 +399,9 @@ input[type="submit"]:hover {
 }
 
 .modal-footer {
-  padding: 10px;
-  height: 45px;
-  background-color: #2d2d2d;
+  padding: 2px 16px;
+  background-color: #dc9135;
+  color: black;
 }
 
 /* Always set the map height explicitly to define the size of the div
@@ -504,6 +533,57 @@ body {
   display: block;
 }
 
+.awesome {
+  width: 100%;
+
+  animation: colorchange 20s;
+}
+
+@keyframes colorchange {
+  0% {
+    background-color: blue;
+  }
+
+  10% {
+    background-color: #8e44ad;
+  }
+
+  20% {
+    background-color: #1abc9c;
+  }
+
+  30% {
+    background-color: #d35400;
+  }
+
+  40% {
+    background-color: blue;
+  }
+
+  50% {
+    background-color: #34495e;
+  }
+
+  60% {
+    background-color: blue;
+  }
+
+  70% {
+    background-color: #2980b9;
+  }
+  80% {
+    background-color: #f1c40f;
+  }
+
+  90% {
+    background-color: #2980b9;
+  }
+
+  100% {
+    background-color: pink;
+  }
+}
+
 .whole {
   position: relative;
 }
@@ -516,4 +596,18 @@ body {
 
 .blacktext {
   color: black;
+}
+
+div.b {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+
+  /*background-image: url(images/rentals/bunny.png);*/
+}
+div.c {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  /*background-image: url(images/rentals/mickey.png);*/
 }

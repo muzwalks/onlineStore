@@ -14,30 +14,31 @@
 
     <title>Murray's Online Store Checkout </title>
 </head>
- <body style="background-color:white" > 
+<body >
   <div id = "dissolve">
       <header>
+  
           <nav class="navbar navbar-expand-lg mynavbar1">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
-              <div class="navbar-nav" style = "width:100%">
-                <a href="MyStore-home-english.html"><img src="images/apacheLogo.png" alt= "Apache Logo" style="width:190px; height:40px"></a>          
-                  <div style="margin-top:9px; margin-left:10px">
-                    <a class="navbar-brand" style="margin-left:320px"><a href='MyStore-home-english.html' style="text-decoration: none">Home</a>
-                    <a class="navbar-brand"><a href="MyStore-catalogue.html"style="text-decoration: none">Catalogue</a>
-                    <a class="navbar-brand"><a href="MyStore-QUOTE.html" style="text-decoration: none">Quote</a>
-                    <a class="navbar-brand"><a href="MyStore-team.html" style="text-decoration: none">The Team</a>        
-                    <a class="navbar-brand"><a href="MyStore-contact.html" style="text-decoration: none">Contact Us</a>
-                  </div>
-                    <a href="MyStore-checkout.html"><img src="images/cartempty.png"  id = "onclickchange" alt= "Shopping Cart"   style=" width:30px; height: 30px; margin-top:5px;margin-left:30px "></a> 
-              </div>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+            <div class="navbar-nav" style = "width:100%">
+              <a href="MyStore-home-english.html"><img src="images/apacheLogo.png" id = "onclickchange" alt= "Apache Logo" style="width:190px; height:40px"></a>          
+                <div style="margin-top:9px; margin-left:160px">
+                  <a class="navbar-brand" style="margin-left:320px"><a href='/MyStore-home-english.html' style="text-decoration: none">Home</a>
+                  <a class="navbar-brand"><a href="MyStore-catalogue.html"style="text-decoration: none">Catalogue</a>
+                  <a class="navbar-brand"><a href="MyStore-QUOTE.html" style="text-decoration: none">Quote</a>
+                  <a class="navbar-brand"><a href="MyStore-team.html" style="text-decoration: none">The Team</a>        </div>
+                  <a href="MyStore-checkout.html"><img src="images/cartempty.png"  id = "onclickchange" alt= "Shopping Cart"   style=" width:30px; height: 30px; margin-top:5px;margin-left:30px "></a>
+                </div>
             </div>
-          </nav>
-        </header>
+          </div>
+        </nav>
+       </header>
  <br>
  <br>
 
-
-
+<div class='c'><img src="images/rentals/mickey.png" id = "mickeymouse" alt= "Mickey"></div>
+<div class='b'><img src="images/rentals/rabbit.png" id = "bugs" alt= "Bunny"></div>
+ 
  <br>
  <div class="container">
     <div class="row">
@@ -101,49 +102,59 @@
             </li>
           </ul>
             <div class="input-group">
-              <input type="text" class="form-control" id = "promo" placeholder="Promo code" style="height:32px">
+              <input type="text" class="form-control" id = "promo" placeholder="Promo code">
               <div class="input-group-append">
                 <button class="cartbutton" id="redeemit" onclick="Redeem()">Redeem</button>
               </div>
             </div>
             <br>
+
             <div class="btn-group">
-            <button type="button" class=" dropdown-toggle dropdown-toggle-split cartbutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Calculate
+  
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Calculate
+             
             </button>
               <div class="dropdown-menu">
-                <button  class="dropdown-item cartbutton" id="showCalc">Calculator</button>
-                <button  class="dropdown-item cartbutton" id="showConverter">Currency Converter</button>
+                <button  class="dropdown-item" id="showCalc">Calculator</button>
+                <button  class="dropdown-item" id="showConverter">Currency Converter</button>
               </div>
             </div>
             <button class="cartbutton"  id = "updating" style="width:27%" onclick="Update()">Update</button>
-            <button  class="cartbutton" id="myBtn" style="float:left; width:42%" onclick="confirmOrder()">Confirm Order</button>
+            <button  class="cartbutton" id="myBtn" style="float-left; width:43%" onclick="confirmOrder()">Confirm Order</button>
 
          </div>
     </div>
 </div>
 </BR>
 
+
+
+
+<!-- Example single danger button -->
+
+<!-- Trigger/Open The Modal -->
+
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
-    
-    <div class="modal-header">  
-      <h3 style="color:#8f98e9;padding-bottom:6px">YOUR ORDER HAS BEEN CONFIRMED</h3>
+    <div class="modal-header">
+      
+      <h2>YOUR ORDER HAS BEEN CONFIRMED</h2>
       <span class="close"><a href="MyStore-home-english.html">&times;</a></span>
     </div>
-
-    <div class="modal-body" style="color:#2d2d2d">
-      <h3 >Order number: </h3>
-      <h3  id="demo"></h3>
+    <div class="modal-body">
+      <p>Order number: </p>
+      <p id="demo"></p>
     </div>
-
     <div class="modal-footer">
-      <h3 style="color:#8f98e9; margin-top:6px">THANKS FOR RENTING AT APACHE!</h3>
+      <h3>THANKS FOR RENTING AT APACHE!</h3>
     </div>
-
   </div>
+
+</div>
 <br>
  
  
@@ -192,23 +203,51 @@
               </div>
 
               <div id="container1">
-      
+
+
+        <br>
+        <br>
+        <button class="cartbutton" id = "dissolveButt">Push me</button>
+        <button class="cartbutton" id = "changeBackground">Change Background Color</button>
+        <button class="cartbutton" id = "changeFont">Change Font Color</button>
+        <button class="cartbutton" id = "changeFontsize">Change Font Size</button>
+        <button class="cartbutton" id = "mickey">Mickey</button>
+        <button class="cartbutton" id = "bunny">Bugs</button>
+        
+        <br>
+        <br>
+        
+       
+        
+
+        
  </body>   
 
- <footer>	
-    <nav class="navbar navbar-expand-lg footsy">
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
-        <div class="navbar-nav" style = "width:100%">
-          <div style="margin-top:6px">
-            <a href=""><img src="images/twitter.png" alt= "My Store Logo" class="sociallogo" style=" margin-left:150px"</a>
-            <a href=""><img src="images/facebook.png" alt= "My Store Logo" class="sociallogo" </a>
-          </div>
-          <a href="MyStore-home-english.html"><img src="images/apacheLogo.png" id = "onclickchange" alt= "Apache Logo"   style="margin-left:260px; width:190px; height: 40px "></a>          <div style="margin-top:9px; margin-left:160px">
-          <a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
-        </div>   
-      </div>
-    </nav>    
-  </footer>
+ <footer align="left">
+    <nav id="mainNav" class = "foot awesome">
+      <table style="padding-top:5px">
+        <tr><td><a href="mailto:sales@apache.com" style="line-height: 1.7em">sales@apache.com</a><br><!--I included the email and the anchor because some people prefer to copy and paste the address into there own email provider-->
+            <a href="callto:0834567889"style="line-height: 1.7em">0834567889</a>
+          </td>
+          <td>
+                    <a href="MyStore-home-english.html">
+              <img src="images/mystorelogo.png" alt= "My Store Logo" id="MyStoreLogo4" class="navbarlogo" style=" margin-left:120px"</a><br>
+              <a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
+          </td>
+          <td>
+                    <a href="">
+              <img src="images/twitter.png" alt= "Twitter page" id = "Twitter" class="sociallogo whole2" style=" margin-left:150px"</a>
+          </td>
+          <td>
+                    <a href="">
+              <img src="images/facebook.png" alt= "FB page" id ="Facebook" class="sociallogo whole" </a>
+          </td>
+        </tr>
+      </table>
+      
+        </nav>
+</footer>
+</div>
 
 <script type="text/javascript">
 
@@ -300,7 +339,16 @@
              btndelete.setAttribute("class", "btn btn-light btn-bg");
               
              cell7.appendChild(btndelete);
-             
+             /*
+             btndelete.onclick = function() { 
+            var value1= document.getElementById("MyTable").rows[i].cells[5].innerHTML;
+              var total = localStorage.getItem(localStorage.key(0));
+              total = +total - +value1;
+              alert("Your current total is: R" + total);
+              document.getElementById("subtotal").value = total;
+              localStorage.setItem("Total",total);
+              document.getElementById("MyTable").deleteRow(i)};  */ 
+
                btndelete.onclick = function() { 
            var value1= document.getElementById("MyTable").rows[i].cells[5].innerHTML;
            var total = localStorage.getItem(localStorage.key(0));
@@ -485,12 +533,14 @@ btn.onclick = function() {
     var x = document.getElementById("demo")
     x.innerHTML ="XRT" +  Math.floor((Math.random() * 100000) + 1);
   }
+
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
     resetCart();
+
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -498,6 +548,7 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+
 }
 
 //CALCULATOR
@@ -569,7 +620,6 @@ var textresult = document.getElementById("resultbox");
     textresult.value = c; 
   }
 }
-
 function clearBoxes(){
     var textamount = document.getElementById("amountbox");
     var textresult = document.getElementById("resultbox");
@@ -577,10 +627,11 @@ function clearBoxes(){
     textresult.value ="";
 }
 
+
 $(document).ready(function(){
-    // $("#updating").click(function(){
-    //     $("#updating").slideUp(2000).slideDown(2000);
-    // });
+    $("#updating").click(function(){
+        $("#updating").slideUp(2000).slideDown(2000);
+    });
 
     $("#showCalc").click(function(){
         $("#calc").toggle();
@@ -592,18 +643,138 @@ $(document).ready(function(){
 
     $("#resetCart").click(function(){
       $("#resetCart").fadeOut(1000);
-  });    
+  });
+
+    $("#dissolveButt").click(function(){
+      $("#dissolve").fadeOut(1000).delay(1000);
+      $("#dissolve").delay(1000);
+      alert("We are experiencing technical difficulties! Please bear with us.");
+      $("#dissolve").delay(1000);
+      $("#dissolve").fadeIn(1000);
+    }); 
+
+    // change the font size of the text in the checkout.html page
+    $("#changeFont").click(function(){
+    	// save the color of the text in a variable to improve readability
+    	var color = $("#checkout").css('color');
+    	// what value is this color property and does our if statement test it correctly? You'll find that the RGB value of the current color is returned, therefore, we need to adjust the condition accordingly
+    	console.log(color);
+      if(color ==='rgb(0, 0, 0)') {
+        $("#checkout").css({'color':'red'});
+    }
+      else{
+        $("#checkout").css({'color':'black'});
+        }
+      });
+
+    $("#changeBackground").click(function(){
+      var color1 = $("#dissolve");
+      color1.css("background-color","red");
+      });
+
+    $("#changeFontsize").click(function(){
+      var color1 = $("#dissolve");
+      color1.css("font-size","8px");
+      }); 
   })
 
    
-   
-
-   
-
-    
-
+    $(window).on("load",function(){
       
+  startAnimation2();
+        function startAnimation2(){
+      value2 = $('.whole').css('right') === '50px' ? 0 : '50px';
+      $('.whole').animate({
+          right: value2
+      });
 
+      value3 = $('.whole2').css('left') === '50px' ? 0 : '50px';
+      $('.whole2').animate({ 
+          left: value3
+      });
+
+      $('.whole2').animate({width: 40}, "slow", startAnimation2);
+     }
+
+      var div = $("#MyStoreLogo3");
+        div.animate({height: '300px', opacity: '0.4'}, "slow");
+        div.animate({width: '300px', opacity: '0.8'}, "slow");
+        div.animate({height: '100px', opacity: '0.4'}, "slow");
+        div.animate({width: '100px', opacity: '0.8'}, "slow");
+
+    $( "#MyStoreLogo2" ).animate({
+      width: [ "toggle", "swing" ],
+      height: [ "toggle", "swing" ],
+      opacity: "toggle"
+      }, 5000, "linear");
+
+    $("#MyStoreLogo2").fadeIn(3000);
+    $("#resetCart").fadeIn(1000);
+    $("#saflag").animate({width:'toggle'},6500).animate({width:'toggle'},350);
+    $("#onclickchange").animate({
+        right: '250px',
+        opacity: '0.5',
+        height: '50px',
+        width: '50px',
+        }); 
+
+    var div = $("#chflag");
+    div.animate({height: '40px', opacity: '0.4'}, "slow");
+    div.animate({width: '45px', opacity: '0.8'}, "slow");
+    div.animate({height: '25px', opacity: '0.4'}, "slow");
+    div.animate({width: '30px', opacity: '0.8'}, "slow");
+
+      var div = $("#MyStoreLogo4");
+        startAnimation();
+        function startAnimation(){
+            div.fadeIn(3000)
+            div.delay(100)
+            div.fadeTo(1000, 0.1) 
+            div.delay(100)
+            div.fadeTo(1000,1)
+            div.animate({width: 60}, "slow", startAnimation);
+        }
+})
+
+/*$("#bunny").click(function(){
+    animateDiv('.b');
+   
+});
+$("#mickey").click(function(){
+    animateDiv('.c');
+   
+});*/
+  $("#bunny").click(function(){
+    $(".b").css('opacity', '1');
+    animateDiv('.b');
+  });
+
+  $("#mickey").click(function(){
+    $(".c").css('opacity', '1');
+     animateDiv('.c');    
+  });
+  
+
+function makeNewPosition(){
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];    
+    
+}
+
+function animateDiv(myclass){
+    var newq = makeNewPosition();
+    $(myclass).animate({ top: newq[0], left: newq[1] }, 1000,   function(){
+      animateDiv(myclass);        
+    });
+    
+};
 
  </script>
 

@@ -17,33 +17,82 @@
         var getSource = document.getElementById("onclickchange");
         getSource.src = fullCart;
        
-        sessionStorage.setItem(equipment,price);
-        let value = sessionStorage.getItem(equipment);
-        total = +total + +value; 
-        alert("Your current total is: R" + total);
-        localStorage.setItem("Total",total);      
-  };  
+          sessionStorage.setItem(equipment,price);
+          let value = sessionStorage.getItem(equipment);
+          total = +total + +value; 
+          alert("Your current total is: R" + total);
+          localStorage.setItem("Total",total);      
+    };
+
+// $(document).ready(function(){
+//   $('.ab').css("opacity","1");
+//     animateDiv();
+// });
+
+function makeNewPosition(){
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];        
+}
+
+function animateDiv(){
+    var newq = makeNewPosition();
+    var oldq = $('.ab').offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+    
+    $('.ab').animate({ top: newq[0], left: newq[1] }, speed, function(){
+      animateDiv();        
+    });
+    
+};
+
+function calcSpeed(prev, next) {
+    
+    var x = (prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+    
+    var greatest = x > y ? x : y;
+    
+    var speedModifier = 0.1;
+
+    var speed = Math.ceil(greatest/speedModifier);
+
+    return speed;
+
+}
+    
 
 </script>
-
+</head>
 <header>
+  
     <nav class="navbar navbar-expand-lg mynavbar1">
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
-        <div class="navbar-nav" style = "width:100%">
-          <a href="MyStore-home-english.html"><img src="images/apacheLogo.png" alt= "Apache Logo" style="width:190px; height:40px"></a>          
-            <div style="margin-top:9px; margin-left:10px">
-              <a class="navbar-brand" style="margin-left:320px"><a href='MyStore-home-english.html' style="text-decoration: none">Home</a>
-              <a class="navbar-brand"><a href="MyStore-catalogue.html"style="text-decoration: none">Catalogue</a>
-              <a class="navbar-brand"><a href="MyStore-QUOTE.html" style="text-decoration: none">Quote</a>
-              <a class="navbar-brand"><a href="MyStore-team.html" style="text-decoration: none">The Team</a>        
-              <a class="navbar-brand"><a href="MyStore-contact.html" style="text-decoration: none">Contact Us</a>
-            </div>
-              <a href="MyStore-checkout.html"><img src="images/cartempty.png"  id = "onclickchange" alt= "Shopping Cart"   style=" width:30px; height: 30px; margin-top:5px;margin-left:30px "></a> 
-        </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+      <div class="navbar-nav" style = "width:100%">
+        <a href="MyStore-home-english.html"><img src="images/apacheLogo.png" alt= "Apache Logo" style="width:190px; height:40px"></a>          
+          <div style="margin-top:9px; margin-left:160px">
+            <a class="navbar-brand" style="margin-left:320px"><a href='MyStore-home-english.html' style="text-decoration: none">Home</a>
+            <a class="navbar-brand"><a href="MyStore-catalogue.html"style="text-decoration: none">Catalogue</a>
+            <a class="navbar-brand"><a href="MyStore-QUOTE.html" style="text-decoration: none">Quote</a>
+            <a class="navbar-brand"><a href="MyStore-team.html" style="text-decoration: none">The Team</a>        </div>
+            <a href="MyStore-checkout.html"><img src="images/cartempty.png"  id = "onclickchange" alt= "Shopping Cart"   style=" width:30px; height: 30px; margin-top:5px;margin-left:30px "></a>
+          </div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+ </header>
  <br>
+
+ /* <div class='ab'>
+   <p>SALE ON SOUND!</p>
+ </div> */
+
 
  	<h1>CAMERA RENTAL</h1>
     <br>
@@ -162,18 +211,18 @@
                 <div class="col-4">
                    <div class ="equipment ">
                     <a href="MyStore-generator.html">
-                        <img id="GENERATOR" src= "images/rentals/GENERATOR.jpg" alt="Honda 6.5kVA Generator" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded" style="color:black"> Honda 6.5kVA Generator</a>
+                        <img id="GENERATOR" src= "images/rentals/GENERATOR.jpg" alt="Honda 6.5kVA Generator" class="img-thumbnail img-fluid shadow p-3 mb-4 bg-white rounded"> Honda 6.5kVA Generator</a>
                         <br>
                         <h3>R409/week</h3>
-                        <button onclick ="addtoCart('Honda 6.5kVA Generator','409')" id="Honda 6.5kVA Generator" value="" class = "cartbutton">Add to cart</button>
+                        <button onclick ="addtoCart('Honda 6.5kVA Generator','409')" id="Honda 6.5kVA Generator" value="" class = "cartbutton">Quick add to cart</button>
                     </div>
                 </div>
               </div>
             </div>
     <BR>
-    
+    <BR>
        <h1>DISCOUNTS</h1>
-       <p style="font-weight:bold; color:#8f98e9" align="middle">*We offer great discounts for longer term rentals.</p><br>
+       <p style="font-weight:bold" align="middle">*We offer great discounts for longer term rentals.</p><br>
 
        <table class="table table-bordered table-hover">
   <thead>
