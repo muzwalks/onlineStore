@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<title>Murray's Online Store Home </title>
+
+
+ 
+
+<link href ="MyStore.css" rel="stylesheet" type="text/css">
+</head>
+<header>
+<nav id="mainNav" class = "mynavbar1" >
+
+<div class = "navbar1">
+  <table>
+    <tr>
+      <td class ="tabletop">
+    <a href="index.html"><img src="images/mystorelogo.png" id="MyStoreLogo5" alt= "My Store Logo" class="navbarlogo" style="float:left;"></a></td>
+      <td class ="tabletop"><a class="apache" style="font-size: 24px">APACHE<BR>RENTALS</a></td>
+      <td class ="tabletop"><a href="index.html">HOME</a></td>
+      <td class ="tabletop"><a href="MyStore-catalogue.html">CATALOGUE</a></td>
+      <td class ="tabletop"><a href="MyStore-QUOTE.html">QUOTE</a></td>
+       <td class ="tabletop"> <div class="dropdown">
+          <button class="dropbtn"><B>ABOUT US</B>
+      
+    </button>
+          <!--<a href="">ABOUT US</a>-->
+            <div class="dropdowncontent">  
+              <a href="MyStore-team.html">THE TEAM</a>
+              <a href="MyStore-team.html">OUR STORY</a>
+            </div>
+        </div> </td>
+
+      <td class ="tabletop" style="padding:0"><a href="index.html"><img src="images/saflag.png" alt= "SA Flag" class="flagsizer"></a></td>
+      <td class ="tabletop"><a href="MyStore-home-Chinese.html"><img src="images/Chinese.png" alt= "SA Flag" class="flagsizer"></a></td>
+      <td class ="tabletop"><form role="search">
+          <div class="search-control">
+          <input type="search" id="site-search" name="q" placeholder="Search the site...">
+                  <button >Search</button>
+          </div>
+          </form>
+          </td>
+          <td class ="tabletop"><a href="MyStore-checkout.html">
+              <img src="images/cartempty.png" id = "onclickchange" alt= "Shopping Cart"  class="flagsizer"  width:30px; height: 30px "></a>
+          </td>
+        </div>
+      </form>
+    </tr>
+  </table>
+ 
+  
+  
+</div>  
+</div>
+</nav>
+ </header>
+ <body>
+ 	<div class="imgdetails">
+ 		<!--I used margin-left here to no avail hence my use of multiple breaks. Please explain-->
+ 		<a class="quotebar"  ><i>"I was able to make an Oscar winning film with the top quality equipment and service from Apache."</i> James Cameron</a>
+ 	</div><br>
+ 	<h1>WELCOME TO APACHE FILM RENTALS</h1>
+ 		<p style="width:70%;margin-left:15%; margin-right:15%;">We are a supplier of High-end Digital 6K to HD Camera Production equipment to the South African film & television production industry
+
+Based in Johannesburg , Gauteng province – the economic heartbeat of South Africa & Africa – we are centrally situated with easy access to major broadcasters, production facilities, major hotels, highways & business centres.</p><br>
+	<div class="divanimation" >
+		<a>10% off on all sound rentals</a>
+		  <a href ="MyStore-catalogue.html#soundrental"><button type="button" class="cartbutton">Click here</button> </a>
+		</div>
+		<br>
+		<br>
+
+ </body>
+<footer>
+		<nav id="mainNav" class = "foot">
+			<table style="padding-top:5px">
+				<tr><td><a href="mailto:sales@apache.com" style="line-height: 1.7em">sales@apache.com</a><br><!--I included the email and the anchor because some people prefer to copy and paste the address into there own email provider-->
+						<a href="callto:0834567889"style="line-height: 1.7em">0834567889</a>
+					</td>
+					<td>
+               			<a href="index.html">
+							<img src="images/mystorelogo.png" alt= "My Store Logo" class="navbarlogo" style=" margin-left:120px"</a><br>
+							<a style="font-size:10px; margin-left:55px"> &copy; Apache Rentals. All Rights Reserved.</a>
+					</td>
+					<td>
+               			<a href="">
+              <img src="images/twitter.png" alt= "My Store Logo" class="sociallogo" style=" margin-left:150px"</a>
+					</td>
+					<td>
+               			<a href="">
+							<img src="images/facebook.png" alt= "My Store Logo" class="sociallogo" </a>
+					</td>
+				</tr>
+			</table>
+			
+       	</nav>
+</footer>
+<script type="text/javascript">
+  var fullCart = "images/cartfull.png";
+     var getSource = document.getElementById("onclickchange");
+  if (localStorage.length > 0)
+    {
+            getSource.src = fullCart;
+    }
+          
+</script>
+</html>
+
+
+
